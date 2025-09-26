@@ -7,6 +7,14 @@ terraform {
   }
 }
 
+variable "count" {
+  type = number
+}
+
+variable "prefix" {
+  type = string
+}
+
 variable "length" {
   type = string
 }
@@ -16,10 +24,12 @@ variable "separator" {
 }
 
  resource "random_pet" "name1" {
+  count     = var.count
+  prefix    = var.prefix
   length    = var.length
   separator = var.separator
  }
 
-output "name1" {
-  value = random_pet.name1.id
+output "random_pet_kind" {
+  value = random_pet.name1[*].id
 }
