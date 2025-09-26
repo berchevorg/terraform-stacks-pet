@@ -5,7 +5,7 @@ required_providers {
   }
 }
 
-variable "count" {
+variable "instances" {
   type = number
 }
 
@@ -27,7 +27,7 @@ component "pet" {
   source = "./pet"
 
   inputs = {
-    count     = var.count
+    instances = var.instances
     prefix    = var.prefix
     length    = var.length
     separator = var.separator
