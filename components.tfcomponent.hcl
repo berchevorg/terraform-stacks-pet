@@ -5,6 +5,14 @@ required_providers {
   }
 }
 
+variable "count" {
+  type = number
+}
+
+variable "prefix" {
+  type = string
+}
+
 variable "length" {
   type = string
 }
@@ -19,6 +27,8 @@ component "pet" {
   source = "./pet"
 
   inputs = {
+    count     = var.count
+    prefix    = var.prefix
     length    = var.length
     separator = var.separator
   }
