@@ -34,9 +34,3 @@ output "random_pet_kind" {
   value = random_pet.pet[*].id
 }
 
-
-#####
-module "versions" {
-  source  = "app.terraform.io/georgi-berchev/versions/randompet"
-  version = "0.0.2-pre"
-}
